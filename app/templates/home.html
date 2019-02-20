@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class = "row pt-2"  </div>
+    <h1>Welcome to my first website</h1>
+
+    <h4>Well, here we are: on the Tech side aiming to program something cool...</h4>
+<img <source src="https://i.pinimg.com/736x/9f/62/52/9f6252c4f0b498a330c7b8f6ea5b56df--programming-humor-python-programming.jpg" type="video/">
+<img <source src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy-downsized.gif" type="video/">
+    {% for post in allPost %}
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content}}</p>
+      <p>{{ post.author}}</p>
+    {% endfor %}
+  {% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "layout.html"%}
+{% block content %}
+
+    <h1>This is about stuff page :)</h1>
+    {% if allPost %}
+      {% for post in allPost %}
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content}}</p>
+      <p>{{ post.author}}</p>
+      {% endfor %}
+
+    {% else %}
+    <p> No posts to show </p>
+
+    {% endif %}
+
+
+  {% endblock content %}

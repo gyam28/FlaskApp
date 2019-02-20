@@ -1,0 +1,8 @@
+__pycache__/
+__init__.pyc
+app/__pycache__/
+auth/__pycache__/
+.venv
+venv/
+env/
+*.pyc

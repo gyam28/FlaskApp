@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="row">
+  <div class = "col-sm-5 mx-auto pt-2">
+    <div class ="text-center">
+      <h2>Register</h2>
+      </div>
+      <form method="POST">
+        {{ reg_form.hidden_tag() }}
+        <!-- username setup -->
+        <div class="form-group">
+          {{ reg_form.username.label(class="form-control-label title") }}
+          {% if reg_form.username.errors %}
+            {{ reg_form.username(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for err in reg_form.username.errors %}
+                <span>{{err}}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ reg_form.username(class="form-control form-control-lg") }}
+          {% endif %}
+        </div>
+        <!-- email setup -->
+        <div class="form-group">
+          {{ reg_form.email.label(class="form-control-label title") }}
+          {% if reg_form.email.errors %}
+            {{ reg_form.email(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for err in reg_form.email.errors %}
+                <span>{{err}}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ reg_form.email(class="form-control form-control-lg") }}
+          {% endif %}
+        </div>
+            <!-- password input -->
+        <div class= "form-group">
+          {{ reg_form.password.label(class="form-control-label title") }}
+          {% if reg_form.password.errors %}
+          {{ reg_form.password(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for err in reg_form.password.errors %}
+              <span>{{err}}</span>
+            {% endfor %}
+        </div>
+        {%else%}
+        {{ reg_form.password(class="form-control form-control-lg") }}
+        {% endif%}
+        </div>
+        <!-- confirmation password -->
+        <div class= "form-group">
+          {{ reg_form.confirm_password.label(class="form-control-label title") }}
+          {% if reg_form.confirm_password.errors %}
+          {{ reg_form.confirm_password(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for err in reg_form.confirm_password.errors %}
+              <span>{{err}}</span>
+            {% endfor %}
+          </div>
+          {%else%}
+          {{ reg_form.confirm_password(class="form-control form-control-lg") }}
+          {% endif%}
+        </div>
+        <!-- registration submission button -->
+        <div class= "form-group">
+          {{ reg_form.submit(class="btn btn-lg btn-dark") }}
+        </div>
+
+      </form>
+      <div class="border-top pt-2">
+      <small class="text-muted">
+      Already have an account? <a href="/login">Log in here</a>
+      </small>
+      </div>
+  </div>
+</div>
+
+{% endblock content %}
